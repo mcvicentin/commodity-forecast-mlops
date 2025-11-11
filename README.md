@@ -53,3 +53,32 @@ commodity-forecast-mlops/
 └── README.md
 
 ```
+
+## Stack
+
+  - ETL: PySpark / pandas
+  - Modeling: PyTorch Lightning / XGBoost
+  - Tracking: MLflow
+  - Serving: FastAPI / Docker
+  - Monitoring: Evidently AI / Streamlit
+
+
+## How to run
+
+```
+# create environment
+conda create -n mlops python=3.11
+conda activate mlops
+pip install -r requirements.txt
+
+# run data pipeline
+python src/data/load_data.py
+
+# train model
+python src/models/train_model.py
+
+# start API
+uvicorn src.api.app:app --reload
+```
+
+
